@@ -13,7 +13,7 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String geMain(Model model){
+    public String getMain(Model model){
         return "index";
     }
 }
