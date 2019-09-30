@@ -3,7 +3,7 @@ package guru.springframework.spring5webapp.controllers;
 import guru.springframework.spring5webapp.repositories.AuthorRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AuthorController {
@@ -14,8 +14,8 @@ public class AuthorController {
         this.authorRepository = authorRepository;
     }
 
-    @RequestMapping("/authors")
-    public String getAuthors(Model model){
+    @GetMapping(path = "/authors")
+    public String getAuthors(Model model) {
         model.addAttribute("authors", authorRepository.findAll());
         return "authors";
     }
